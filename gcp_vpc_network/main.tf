@@ -33,7 +33,7 @@ resource "google_compute_router" "vpc_router" {
   name    = "${var.name_prefix}-router"
   project = var.project
   region  = var.region
-  network = google_compute_network.vpc.name
+  network = google_compute_network.vpc.self_link
 }
 
 # -------------------------
