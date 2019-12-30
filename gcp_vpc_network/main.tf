@@ -30,10 +30,10 @@ resource "google_compute_network" "vpc" {
 }
 
 resource "google_compute_router" "vpc_router" {
-  name = "${var.name_prefix}-router"
+  name    = "${var.name_prefix}-router"
   project = var.project
   region  = var.region
-  network = google_compute_network.vpc.self_link
+  network = google_compute_network.vpc.name
 }
 
 # -------------------------
@@ -43,7 +43,7 @@ resource "google_compute_router" "vpc_router" {
 # -------------------------
 
 resource "google_compute_subnetwork" "vpc_subnetwork_public" {
-  name = "${var.name_prefix}-subnetwork-public"
+  name    = "${var.name_prefix}-subnetwork-public"
   project = var.project
   region  = var.region
   # Specify the self link of the VPC network created earlier
@@ -68,7 +68,7 @@ resource "google_compute_subnetwork" "vpc_subnetwork_public" {
 }
 
 resource "google_compute_router_nat" "vpc_nat" {
-  name = "${var.name_prefix}-nat"
+  name    = "${var.name_prefix}-nat"
   project = var.project
   region  = var.region
   # Specify the self link of the router created earlier
@@ -90,7 +90,7 @@ resource "google_compute_router_nat" "vpc_nat" {
 # -------------------------
 
 resource "google_compute_subnetwork" "vpc_subnetwork_private" {
-  name = "${var.name_prefix}-subnetwork-private"
+  name    = "${var.name_prefix}-subnetwork-private"
   project = var.project
   region  = var.region
   # Specify the self link of the VPC network created earlier
