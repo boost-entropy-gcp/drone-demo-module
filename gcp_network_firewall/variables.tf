@@ -18,6 +18,26 @@ variable "private_subnetwork" {
   type        = string
 }
 
+variable "pub_subnw_range" {
+  description = "Primary subnet range of the public subnetwork of the network"
+  type        = string
+}
+
+variable "pub_subnw_range_scndry" {
+  description = "Secondary subnet range of the public subnetwork of the network"
+  type        = string
+}
+
+variable "priv_subnw_range" {
+  description = "Primary subnet range of the private subnetwork of the network"
+  type        = string
+}
+
+variable "priv_subnw_range_scndry" {
+  description = "Secondary subnet range of the private subnetwork of the network"
+  type        = string
+}
+
 variable "name_prefix" {
   description = "A name prefix used in resource names to ensure uniqueness across a project."
   type        = string
