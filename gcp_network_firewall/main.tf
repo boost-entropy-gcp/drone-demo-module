@@ -12,16 +12,6 @@ terraform {
   required_version = ">= 0.12"
 }
 
-# Data resource for obtaining information about the public subnetwork
-data "google_compute_subnetwork" "public_subnetwork" {
-  self_link = var.public_subnetwork
-}
-
-# Data resource for obtaining information about the private subnetwork
-data "google_compute_subnetwork" "private_subnetwork" {
-  self_link = var.private_subnetwork
-}
-
 # Define tags as locals 
 locals {
   public              = "public"
@@ -91,10 +81,10 @@ resource "google_compute_firewall" "private_allow_all_network_inbound" {
   direction   = "INGRESS"
 
   source_ranges = [
-    data.google_compute_subnetwork.public_subnetwork.ip_cidr_range,
-    data.google_compute_subnetwork.public_subnetwork.secondary_ip_range[0].ip_cidr_range,
-    data.google_compute_subnetwork.private_subnetwork.ip_cidr_range,
-    data.google_compute_subnetwork.private_subnetwork.secondary_ip_range[0].ip_cidr_range,
+    var.pub_subnw_range,
+    var.pub_subnw_range_scndry,
+    var.priv_subnw_range,
+    var.priv_subnw_range_scndry,
   ]
 
   priority = "1000"
