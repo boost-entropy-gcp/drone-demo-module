@@ -34,7 +34,7 @@ variable "gke_password" {
 }
 
 variable "project" {
-  description = "The project to create the firewall rules in. Must match the network project."
+  description = "The project to create the gke cluster in."
   type        = string
 }
 
