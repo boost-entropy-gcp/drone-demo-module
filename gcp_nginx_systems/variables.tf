@@ -18,6 +18,11 @@ variable "subnetwork" {
   type        = string
 }
 
+variable "region" {
+  description = "The region for provider"
+  type        = string
+}
+
 variable "zone" {
   description = "The zone to create the nginx in. Must be within the subnetwork region."
   type        = string
