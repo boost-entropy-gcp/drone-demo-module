@@ -33,6 +33,16 @@ variable "gke_password" {
   type        = string
 }
 
+variable "project" {
+  description = "The project to create the firewall rules in. Must match the network project."
+  type        = string
+}
+
+variable "region" {
+  description = "The region for provider"
+  type        = string
+}
+
 # -------------------------
 # OPTIONAL PARAMETERS
 # Generally, these values won't need to be changed.
