@@ -4,8 +4,8 @@
 # -------------------------
 
 
-variable "subnetwork" {
-  description = "A reference (self_link) to the subnetwork to place the F5 in."
+variable "terragrunt_path" {
+  description = "Path to the terragrunt working directory."
   type        = string
 }
 
