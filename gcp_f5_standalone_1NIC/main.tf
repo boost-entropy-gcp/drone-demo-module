@@ -1,4 +1,10 @@
-terraform {
+# Configure the Google Cloud provider
+provider "google" {
+  project     = var.project
+  region      = var.region
+}
+
+erraform {
   # The configuration for this backend will be filled in by Terragrunt
   backend "gcs" {}
 

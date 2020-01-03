@@ -46,7 +46,7 @@ resource "google_container_cluster" "primary" {
 
 data "google_project" "project" {}
 
-# Setup kubeconfig
+# Setup kubeconfig file dynamically
 
 resource "local_file" "kubeconfig" {
   content  = templatefile("${path.module}/templates/kubeconfig-template.yaml", {
@@ -60,5 +60,5 @@ resource "local_file" "kubeconfig" {
     client_cert     = google_container_cluster.primary.master_auth[0].client_certificate
     client_cert_key = google_container_cluster.primary.master_auth[0].client_key
   })
-  filename = "/drone/src/kubeconfig"
+  filename = "${var.terragrunt_path}/../../ansible/kubeconfig"
 }

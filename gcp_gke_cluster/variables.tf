@@ -43,6 +43,11 @@ variable "region" {
   type        = string
 }
 
+variable "terragrunt_path" {
+  description = "Path to the terragrunt working directory."
+  type        = string
+}
+
 # -------------------------
 # OPTIONAL PARAMETERS
 # Generally, these values won't need to be changed.

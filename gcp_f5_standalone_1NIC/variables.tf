@@ -24,6 +24,11 @@ variable "project" {
   type        = string
 }
 
+variable "region" {
+  description = "The region for provider"
+  type        = string
+}
+
 variable "f5_instance_type" {
   description = "The machine type of the instance."
   type        = string

@@ -12,3 +12,8 @@ output "nginx_private_ip" {
   description = "The private IP of the nginx instance."
   value       = google_compute_instance.nginx1.network_interface[0].network_ip
 }
+
+output "app_tag_value" {
+  description = "The tag of the nginx instance."
+  value       = google_compute_instance.nginx1.tags
+}
