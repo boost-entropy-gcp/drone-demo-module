@@ -101,3 +101,13 @@ restcurl -X POST "shared/iapp/package-management-tasks" -d $DATA
 DATA="{\"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/$TS_FN\"}"
 echo -e "\n"$(date) "Install TS Pkg"
 restcurl -X POST "shared/iapp/package-management-tasks" -d $DATA
+
+# SET BIG-IP PASSWORD
+echo "SET THE BIG-IP PASSWORD"
+pwd='${BIGIP_PASS}'
+if [ -z "$pwd" ]
+then
+  echo "ERROR: UNABLE TO OBTAIN PASSWORD"
+else
+  tmsh modify auth user admin password $pwd
+  tmsh save sys config

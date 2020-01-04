@@ -47,5 +47,6 @@ resource "google_compute_instance" "f5_bigip1" {
     TS_URL          = var.TS_URL
     libs_dir		    = var.libs_dir
     onboard_log		  = var.onboard_log
+    BIGIP_PASS      = var.BIGIP_PASS
   })
 }
