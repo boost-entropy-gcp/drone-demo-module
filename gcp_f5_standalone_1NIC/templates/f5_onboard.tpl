@@ -35,7 +35,7 @@ done
 
 mkdir -p ${libs_dir}
 # Could be pre-packaged or hosted internally
-curl -o /config/cloud/f5-cloud-libs.tar.gz --silent --fail --retry 60 -L https://github.com/F5Networks/f5-cloud-libs/archive/v4.11.0.tar.gz
+curl -o /config/cloud/f5-cloud-libs.tar.gz --silent --fail --retry 60 -L https://github.com/F5Networks/f5-cloud-libs/archive/v4.13.5.tar.gz
 tar xvfz /config/cloud/f5-cloud-libs.tar.gz -C ${libs_dir}/
 mv ${libs_dir}/f5-cloud-libs-* ${libs_dir}/f5-cloud-libs
 mkdir ${libs_dir}/f5-cloud-libs/node_modules
