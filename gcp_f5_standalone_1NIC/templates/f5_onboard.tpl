@@ -114,6 +114,14 @@ else
   tmsh save sys config
 fi
 
+sleep 20
+
 # Enable iApps LX Package management in UI
 echo  "ENABLE IAPPS LX PACKAGE MANAGEMENT IN UI"
 touch /var/config/rest/iapps/enable
+
+# Restart restnoded to work around https://github.com/F5Networks/f5-appsvcs-extension/issues/108
+echo  "RESTARTING RESTNODED"
+bigstart restart restnoded
+
+sleep 10
