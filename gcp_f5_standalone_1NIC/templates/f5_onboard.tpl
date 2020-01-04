@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# BIG-IPS ONBOARD SCRIPT
+# BIG-IP ONBOARD SCRIPT
 
 LOG_FILE=${onboard_log}
 
