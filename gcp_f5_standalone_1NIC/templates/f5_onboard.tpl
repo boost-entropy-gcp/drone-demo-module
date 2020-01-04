@@ -39,7 +39,7 @@ curl -o /config/cloud/f5-cloud-libs.tar.gz --silent --fail --retry 60 -L https:/
 tar xvfz /config/cloud/f5-cloud-libs.tar.gz -C ${libs_dir}/
 mv ${libs_dir}/f5-cloud-libs-* ${libs_dir}/f5-cloud-libs
 mkdir ${libs_dir}/f5-cloud-libs/node_modules
-tar xvfz /config/cloud/f5-cloud-libs-aws.tar.gz -C ${libs_dir}/f5-cloud-libs/node_modules
+tar xvfz /config/cloud/f5-cloud-libs.tar.gz -C ${libs_dir}/f5-cloud-libs/node_modules
 
 ### BEGIN BASIC ONBOARDING 
 # WAIT FOR MCPD (DATABASE) TO BE UP TO BEGIN F5 CONFIG
