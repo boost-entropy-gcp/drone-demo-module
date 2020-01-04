@@ -46,6 +46,10 @@ variable TS_URL {
   type = "string"
 }
 
+variable BIGIP_PASS {
+  type = "string"
+}
+
 # -------------------------
 # OPTIONAL PARAMETERS
 # Generally, these values won't need to be changed.
