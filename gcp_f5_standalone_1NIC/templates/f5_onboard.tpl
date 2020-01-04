@@ -113,3 +113,7 @@ else
 
   tmsh save sys config
 fi
+
+# Enable iApps LX Package management in UI
+echo  "ENABLE IAPPS LX PACKAGE MANAGEMENT IN UI"
+touch /var/config/rest/iapps/enable
