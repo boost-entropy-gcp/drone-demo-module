@@ -24,7 +24,7 @@ ansible_ssh_private_key_file=/drone/src/gcp/gcp_ssh_key
 kubeconfig=/drone/src/kubeconfig
 
 [F5_systems:vars]
-ansible_user=f5user
+ansible_user=admin
 ansible_ssh_private_key_file=/drone/src/gcp/gcp_ssh_key
 
 [all:vars]
