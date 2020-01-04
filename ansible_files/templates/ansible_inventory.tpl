@@ -15,7 +15,7 @@ ${gcp_F5_public_ip} vs_ip=${gcp_F5_private_ip}
 [gcp_nginx_systems:vars]
 ansible_python_interpreter=/usr/bin/python3
 # Enter in the user associated with the instance ssh key registered in GCP
-ansible_user=admin
+ansible_user=ubuntu
 # The location of the instance ssh key.
 ansible_ssh_private_key_file=/drone/src/gcp/gcp_ssh_key
 
