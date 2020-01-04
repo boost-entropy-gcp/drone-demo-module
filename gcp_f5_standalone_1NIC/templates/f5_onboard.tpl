@@ -110,4 +110,3 @@ then
   echo "ERROR: UNABLE TO OBTAIN PASSWORD"
 else
   tmsh modify auth user admin password $pwd
-  tmsh save sys config
