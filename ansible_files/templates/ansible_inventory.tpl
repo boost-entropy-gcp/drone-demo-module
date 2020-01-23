@@ -1,5 +1,8 @@
 [gcp_nginx_systems]
-${gcp_nginx_data}
+${gcp_nginx_public_ip}
+
+[gcp_nginx_controller_systems]
+${gcp_nginx_controller_public_ip}
 
 [gke_systems]
 # Must be in the form of <gke public IP> gke_url=<https URL of the endpoint>
@@ -13,6 +16,13 @@ ${gcp_gke_cluster_name}
 ${gcp_F5_public_ip} vs_ip=${gcp_F5_private_ip}
 
 [gcp_nginx_systems:vars]
+ansible_python_interpreter=/usr/bin/python3
+# Enter in the user associated with the instance ssh key registered in GCP
+ansible_user=f5user
+# The location of the instance ssh key.
+ansible_ssh_private_key_file=/drone/src/gcp/gcp_ssh_key
+
+[gcp_ubuntu_systems:vars]
 ansible_python_interpreter=/usr/bin/python3
 # Enter in the user associated with the instance ssh key registered in GCP
 ansible_user=f5user

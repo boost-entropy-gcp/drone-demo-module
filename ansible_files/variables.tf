@@ -27,21 +27,25 @@ variable "region" {
 variable "f5_public_ip" {
   description = "The public IP the F5 VM instance."
   type        = string
+  default     = "10.10.10.10"
 }
 
 variable "f5_private_ip" {
   description = "The private IP the F5 VM instance."
   type        = string
+  default     = "10.10.10.10"
 }
 
 variable "nginx_public_ip" {
   description = "The public IP the NGINX VM instance."
   type        = string
+  default     = "10.10.10.10"
 }
 
 variable "nginx_private_ip" {
   description = "The private IP the NGINX VM instance."
   type        = string
+  default     = "10.10.10.10"
 }
 
 variable "gke_cluster_name" {
@@ -52,6 +56,7 @@ variable "gke_cluster_name" {
 variable "gke_endpoint" {
   description = "IP of the gke cluster"
   type        = string
+  default     = "10.10.10.10"
 }
 
 variable "app_tag_value" {

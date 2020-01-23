@@ -17,11 +17,12 @@ terraform {
 # -------------------------
 resource "local_file" "ansible_inventory_file" {
   content  = templatefile("./templates/ansible_inventory.tpl", {
-    gcp_F5_public_ip      = var.f5_public_ip
-    gcp_F5_private_ip     = var.f5_private_ip
-    gcp_nginx_data        = var.nginx_public_ip
-    gcp_gke_cluster_name  = var.gke_cluster_name
-    gcp_gke_endpoint      = var.gke_endpoint
+    gcp_F5_public_ip                = var.f5_public_ip
+    gcp_F5_private_ip               = var.f5_private_ip
+    gcp_nginx_public_ip             = var.nginx_public_ip
+    gcp_nginx_controller_public_ip  = var.nginx_controller_public_ip
+    gcp_gke_cluster_name            = var.gke_cluster_name
+    gcp_gke_endpoint                = var.gke_endpoint
   })
   filename = "${var.terragrunt_path}/../../ansible/playbooks/inventory/hosts"
 }
