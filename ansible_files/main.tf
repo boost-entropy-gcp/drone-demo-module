@@ -38,3 +38,8 @@ resource "local_file" "ansible_f5_vars_file" {
   })
   filename = "${var.terragrunt_path}/../../ansible/playbooks/group_vars/F5_systems/vars"
 }
+
+resource "local_file" "ansible_nginx_controller_vars_file" {
+  content  = templatefile("./templates/ansible_nginx_controller_vars.tpl", {})
+  filename = "${var.terragrunt_path}/../../ansible/playbooks/group_vars/gcp_nginx_controller_systems/vars"
+}
