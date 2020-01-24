@@ -28,6 +28,8 @@ ansible_python_interpreter=/usr/bin/python3
 ansible_user=f5user
 # The location of the instance ssh key.
 ansible_ssh_private_key_file=/drone/src/gcp/gcp_ssh_key
+# The location of python
+ansible_python_interpreter: /usr/bin/python
 
 [gke_systems:vars]
 
