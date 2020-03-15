@@ -34,6 +34,10 @@ resource "google_compute_instance" "ubuntu" {
     }
   }
 
+  metadata = {
+    enable-oslogin = "FALSE"
+  }
+
   network_interface {
     subnetwork = var.subnetwork
 

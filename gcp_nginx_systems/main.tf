@@ -33,6 +33,10 @@ resource "google_compute_instance" "nginx1" {
       image = var.source_image
     }
   }
+  
+  metadata = {
+    enable-oslogin = "FALSE"
+  }
 
   network_interface {
     subnetwork = var.subnetwork

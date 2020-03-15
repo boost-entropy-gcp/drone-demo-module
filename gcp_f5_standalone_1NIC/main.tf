@@ -31,6 +31,10 @@ resource "google_compute_instance" "f5_bigip1" {
       image = var.source_image
     }
   }
+  
+  metadata = {
+    enable-oslogin = "FALSE"
+  }
 
   network_interface {
     subnetwork = var.subnetwork
