@@ -31,6 +31,7 @@ resource "google_compute_instance" "ubuntu" {
   boot_disk {
     initialize_params {
       image = var.source_image
+      size  = var.disk_size
     }
   }
 
