@@ -63,7 +63,7 @@ variable "source_image" {
 variable "disk_size" {
   description = "The size of the image in gigabytes. If not specified, it will inherit the size of its base image."
   type        = number
-  default     = ""
+  default     = null
 }
 
 variable "startup_script" {
