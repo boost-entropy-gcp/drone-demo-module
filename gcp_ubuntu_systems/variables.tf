@@ -60,6 +60,12 @@ variable "source_image" {
   default     = "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20200108"
 }
 
+variable "disk_size" {
+  description = "The size of the image in gigabytes. If not specified, it will inherit the size of its base image."
+  type        = number
+  default     = ""
+}
+
 variable "startup_script" {
   description = "The script to be executed when the ubuntu starts. It can be used to install additional software and/or configure the host."
   type        = string
