@@ -48,11 +48,18 @@ variable "nginx_private_ip" {
   default     = "10.10.10.10"
 }
 
- variable "nginx_controller_public_ip" {
+variable "nginx_controller_public_ip" {
+  description = "The public IP the NGINX Controller VM instance."
+  type        = string
+  default     = "10.10.10.10"
+}
+
+variable "gcp_nginx_controller_private_ip" {
   description = "The private IP the NGINX Controller VM instance."
   type        = string
   default     = "10.10.10.10"
 }
+
 
 variable "gke_cluster_name" {
   description = "Name of GKE cluster"
