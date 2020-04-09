@@ -1,5 +1,5 @@
 [gcp_nginx_systems]
-${gcp_nginx_public_ip}
+${gcp_nginx_public_ip} private_ip=${gcp_nginx_private_ip}
 
 [gcp_nginx_controller_systems]
 ${gcp_nginx_controller_public_ip}
