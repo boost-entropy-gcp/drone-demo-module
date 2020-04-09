@@ -2,7 +2,7 @@
 ${gcp_nginx_public_ip} private_ip=${gcp_nginx_private_ip}
 
 [gcp_nginx_controller_systems]
-${gcp_nginx_controller_public_ip}
+${gcp_nginx_controller_public_ip} private_ip=${gcp_nginx_controller_private_ip}
 
 [gke_systems]
 # Must be in the form of <gke public IP> gke_url=<https URL of the endpoint>
