@@ -54,7 +54,7 @@ variable "nginx_controller_public_ip" {
   default     = "10.10.10.10"
 }
 
-variable "gcp_nginx_controller_private_ip" {
+variable "nginx_controller_private_ip" {
   description = "The private IP the NGINX Controller VM instance."
   type        = string
   default     = "10.10.10.10"
