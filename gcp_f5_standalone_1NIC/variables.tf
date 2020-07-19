@@ -64,7 +64,7 @@ variable "tag" {
 variable "source_image" {
   description = "The source image to build the VM using. Enter in the self link here."
   type        = string
-  default     = "https://www.googleapis.com/compute/v1/projects/f5-7626-networks-public/global/images/f5-hourly-bigip-14-1-0-1-0-0-7-best-200mbps"
+  default     = "https://www.googleapis.com/compute/v1/projects/f5-7626-networks-public/global/images/f5-bigip-15-1-0-4-0-0-6-payg-best-200mbps-200618231635"
 }
 
 variable libs_dir { 

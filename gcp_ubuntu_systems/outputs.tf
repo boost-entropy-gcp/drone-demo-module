@@ -17,3 +17,8 @@ output "app_tag_value" {
   description = "The tag of the ubuntu instance."
   value       = google_compute_instance.ubuntu.tags
 }
+
+output "ubuntu_instance_name" {
+  description = "Name of the ubuntu host's VM instance"
+  value       = google_compute_instance.ubuntu.name
+}
