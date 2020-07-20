@@ -30,7 +30,7 @@ resource "google_compute_health_check" "autohealing" {
   }
 }
 
-resource "google_compute_instance_group_manager" "group_manager" {
+resource "google_compute_instance_group_manager" "nginx_group_manager" {
   name = "${var.name_prefix}-nginx-igm"
 
   base_instance_name = "${var.name_prefix}-nginx"
@@ -39,6 +39,8 @@ resource "google_compute_instance_group_manager" "group_manager" {
   version {
     instance_template  = google_compute_instance_template.nginx_template.self_link
   }
+
+  target_size  = 2
 
   auto_healing_policies {
     health_check      = google_compute_health_check.autohealing.id
@@ -54,7 +56,7 @@ resource "google_compute_instance_template" "nginx_template" {
   can_ip_forward = false
 
   labels = {
-    Env = "consul"
+    env = "consul"
   }
 
   # Network tags. Must be a match of regex '(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)'
