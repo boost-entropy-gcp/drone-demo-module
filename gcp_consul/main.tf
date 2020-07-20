@@ -19,7 +19,7 @@ terraform {
 
 resource "google_compute_instance" "consul" {
   project      = var.project
-  name         = "${var.name_prefix}-bigip"
+  name         = "${var.name_prefix}-consul"
   machine_type = var.consul_instance_type
   zone         = var.zone
   # tag to use for applying firewall rules 
