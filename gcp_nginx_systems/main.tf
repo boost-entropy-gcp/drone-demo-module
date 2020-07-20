@@ -50,7 +50,7 @@ resource "google_compute_instance_group_manager" "nginx_group_manager" {
 
 resource "google_compute_instance_template" "nginx_template" {
   # Must be a match of regex '(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)'
-  name           = "${var.name_prefix}-instance_template_nginx1"
+  name           = "${var.name_prefix}-instance-template-nginx1"
   #name_prefix  = "${var.application}-instance-template-"
   machine_type   = var.nginx_instance_type
   can_ip_forward = false
