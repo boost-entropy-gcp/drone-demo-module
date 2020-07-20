@@ -15,6 +15,9 @@ ${gcp_gke_cluster_name}
 # Must be in the form of <public IP> vs_ip=<private ip of the F5>
 ${gcp_F5_public_ip} vs_ip=${gcp_F5_private_ip}
 
+[consul_systems]
+${gcp_consul_public_ip} private_ip=${gcp_consul_private_ip}
+
 [gcp_nginx_systems:vars]
 ansible_python_interpreter=/usr/bin/python3
 # Enter in the user associated with the instance ssh key registered in GCP

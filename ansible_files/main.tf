@@ -23,6 +23,8 @@ resource "local_file" "ansible_inventory_file" {
     gcp_nginx_private_ip            = var.nginx_private_ip
     gcp_nginx_controller_public_ip  = var.nginx_controller_public_ip
     gcp_nginx_controller_private_ip = var.nginx_controller_private_ip
+    gcp_consul_public_ip            = var.consul_public_ip
+    gcp_consul_private_ip           = var.consul_private_ip
     gcp_gke_cluster_name            = var.gke_cluster_name
     gcp_gke_endpoint                = var.gke_endpoint
   })
