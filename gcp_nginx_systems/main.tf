@@ -60,7 +60,7 @@ resource "google_compute_instance_template" "nginx_template" {
   }
 
   # Network tags. Must be a match of regex '(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)'
-  tags = [ var.tag ]
+  tags = var.tag
 
   disk {
     source_image = var.source_image
