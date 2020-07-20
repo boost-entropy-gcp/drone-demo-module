@@ -74,7 +74,7 @@ resource "google_compute_instance_template" "nginx_template" {
     }
 
   }
-
+}
 # Below used to spin up one NGINX plus instance
 // resource "google_compute_instance" "nginx1" {
 //   project             = var.project
