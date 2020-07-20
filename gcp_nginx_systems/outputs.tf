@@ -20,5 +20,5 @@
 
 output "nginx_instancegroup_self_link" {
   description = "The tag of the nginx instance."
-  value       = google_compute_instance.nginx_group_manager.self_link
+  value       = google_compute_instance_template.nginx_group_manager.self_link
 }
