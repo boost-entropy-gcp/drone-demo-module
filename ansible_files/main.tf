@@ -20,8 +20,8 @@ resource "local_file" "ansible_inventory_file" {
     gcp_F5_public_ip                = var.f5_public_ip
     gcp_F5_private_ip               = var.f5_private_ip
     gcp_nginx_ig_self_link          = var.nginx_instancegroup_self_link
-    #gcp_nginx_public_ip            = var.nginx_public_ip
-    #gcp_nginx_private_ip           = var.nginx_private_ip
+    gcp_nginx_public_ip             = var.nginx_public_ip
+    gcp_nginx_private_ip            = var.nginx_private_ip
     gcp_nginx_controller_public_ip  = var.nginx_controller_public_ip
     gcp_nginx_controller_private_ip = var.nginx_controller_private_ip
     gcp_consul_public_ip            = var.consul_public_ip
