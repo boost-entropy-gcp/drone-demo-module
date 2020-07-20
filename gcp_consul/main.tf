@@ -26,7 +26,7 @@ resource "google_compute_instance" "consul" {
   tags = var.tag
 
   labels = {
-    Env = "consul"
+    env = "consul"
   }
 
   boot_disk {
