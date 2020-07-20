@@ -60,6 +60,17 @@ variable "nginx_controller_private_ip" {
   default     = "10.10.10.10"
 }
 
+variable "consul_public_ip" {
+  description = "The public IP the Consul VM instance."
+  type        = string
+  default     = "10.10.10.10"
+}
+
+variable "consul_private_ip" {
+  description = "The private IP the Consul VM instance."
+  type        = string
+  default     = "10.10.10.10"
+}
 
 variable "gke_cluster_name" {
   description = "Name of GKE cluster"
