@@ -36,17 +36,17 @@ variable "f5_private_ip" {
   default     = "10.10.10.10"
 }
 
-variable "nginx_public_ip" {
-  description = "The public IP the NGINX VM instance."
-  type        = string
-  default     = "10.10.10.10"
-}
+// variable "nginx_public_ip" {
+//   description = "The public IP the NGINX VM instance."
+//   type        = string
+//   default     = "10.10.10.10"
+// }
 
-variable "nginx_private_ip" {
-  description = "The private IP the NGINX VM instance."
-  type        = string
-  default     = "10.10.10.10"
-}
+// variable "nginx_private_ip" {
+//   description = "The private IP the NGINX VM instance."
+//   type        = string
+//   default     = "10.10.10.10"
+// }
 
 variable "nginx_controller_public_ip" {
   description = "The public IP the NGINX Controller VM instance."
