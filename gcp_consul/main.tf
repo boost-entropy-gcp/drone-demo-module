@@ -24,11 +24,7 @@ resource "google_compute_instance" "consul" {
   zone         = var.zone
   # tag to use for applying firewall rules 
   tags = var.tag
-
-  labels = {
-    env = "consul"
-  }
-
+  
   boot_disk {
     initialize_params {
       image = var.source_image
