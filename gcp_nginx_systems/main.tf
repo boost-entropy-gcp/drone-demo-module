@@ -55,10 +55,6 @@ resource "google_compute_instance_template" "nginx_template" {
   machine_type   = var.nginx_instance_type
   can_ip_forward = false
 
-  labels = {
-    env = "consul"
-  }
-
   # Network tags. Must be a match of regex '(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)'
   tags = var.tag
 
