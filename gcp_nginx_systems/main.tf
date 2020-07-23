@@ -66,6 +66,10 @@ resource "google_compute_instance_template" "nginx_template" {
     source_image = var.source_image
   }
 
+  metadata = {
+    enable-oslogin = "FALSE"
+  }
+
   network_interface {
     #network = "${var.network}"
     subnetwork = var.subnetwork
