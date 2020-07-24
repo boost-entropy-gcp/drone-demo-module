@@ -76,6 +76,11 @@ resource "google_compute_instance_template" "nginx_template" {
     }
 
   }
+
+  metadata_startup_script = templatefile("${path.module}/templates/nginx_onboard.tpl", {
+    CONSUL_VERSION  = var.consul_version
+    PROJECT_NAME    = var.project
+  })
 }
 # Below used to spin up one NGINX plus instance
 // resource "google_compute_instance" "nginx1" {

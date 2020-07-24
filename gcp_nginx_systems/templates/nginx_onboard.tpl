@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Get IP
+local_ipv4="$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)"
+
 #Utils
 sudo apt-get install unzip
 
@@ -49,19 +52,53 @@ sudo chmod 640 /etc/consul.d/consul.hcl
 cat << EOF > /etc/consul.d/consul.hcl
 datacenter = "dc1"
 data_dir = "/opt/consul"
-
 ui = true
 EOF
 
-cat << EOF > /etc/consul.d/server.hcl
-server = true
-bootstrap_expect = 1
-
-client_addr = "0.0.0.0"
+cat << EOF > /etc/consul.d/client.hcl
+advertise_addr = "${local_ipv4}"
 retry_join = ["provider=gce project_name=${PROJECT_NAME} tag_value=consul credentials_file=/tmp/gcp_creds.json"]
+EOF
+
+cat << EOF > /etc/consul.d/nginx.json
+{
+  "service": {
+    "name": "nginx",
+    "port": 80,
+    "checks": [
+      {
+        "id": "nginx",
+        "name": "nginx TCP Check",
+        "tcp": "localhost:80",
+        "interval": "10s",
+        "timeout": "1s"
+      }
+    ]
+  }
+}
 EOF
 
 #Enable the service
 sudo systemctl enable consul
 sudo service consul start
 sudo service consul status
+
+#Install Docker
+sudo snap install docker
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+#Run  nginx
+sleep 10
+cat << EOF > docker-compose.yml
+version: "3.7"
+services:
+  web:
+    image: nginxdemos/hello
+    ports:
+    - "80:80"
+    restart: always
+    command: [nginx-debug, '-g', 'daemon off;']
+    network_mode: "host"
+EOF
+sudo docker-compose up -d

@@ -43,6 +43,11 @@ variable "app_tag_value" {
   type        = string
 }
 
+variable consul_version {
+  description = "The version of consul"
+  type = "string"
+}
+
 # -------------------------
 # OPTIONAL PARAMETERS
 # Generally, these values won't need to be changed.
