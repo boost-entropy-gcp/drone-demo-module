@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Get IP
-local_ipv4="$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)"
+local_ipv4="$(curl -s http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/ip -H 'Metadata-Flavor: Google')"
 
 #Utils
 sudo apt-get install unzip
@@ -56,7 +56,7 @@ ui = true
 EOF
 
 cat << EOF > /etc/consul.d/client.hcl
-advertise_addr = "${local_ipv4}"
+advertise_addr = "$${local_ipv4}"
 retry_join = ["provider=gce project_name=${PROJECT_NAME} tag_value=consul credentials_file=/tmp/gcp_creds.json"]
 EOF
 
