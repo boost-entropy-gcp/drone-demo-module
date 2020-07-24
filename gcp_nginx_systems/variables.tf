@@ -51,7 +51,7 @@ variable "app_tag_value" {
 variable "tag" {
   description = "The GCP network tags to apply to the F5 for firewall rules."
   type        = list
-  default     = ["public", "public-restricted", "private"]
+  default     = ["public", "public-restricted", "private", "consul"]
 }
 
 variable "source_image" {
