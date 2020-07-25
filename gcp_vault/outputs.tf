@@ -35,10 +35,10 @@ output "service_account_email" {
   description = "Email for the vault-admin service account."
 }
 
-output "vault_addr" {
-  value       = module.cluster.vault_addr
-  description = "Full protocol, address, and port (FQDN) pointing to the Vault load balancer.This is a drop-in to VAULT_ADDR: `export VAULT_ADDR=\"$(terraform output vault_addr)\"`. And then continue to use Vault commands as usual."
-}
+// output "vault_addr" {
+//   value       = module.cluster.vault_addr
+//   description = "Full protocol, address, and port (FQDN) pointing to the Vault load balancer.This is a drop-in to VAULT_ADDR: `export VAULT_ADDR=\"$(terraform output vault_addr)\"`. And then continue to use Vault commands as usual."
+// }
 
 // output "vault_lb_addr" {
 //   value       = module.cluster.vault_addr

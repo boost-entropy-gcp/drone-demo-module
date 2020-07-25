@@ -1,6 +1,6 @@
 # Run Vault in HA mode. Even if there's only one Vault node, it doesn't hurt to
 # have this set.
-api_addr = "${api_addr}"
+#api_addr = "${api_addr}"
 cluster_addr = "https://LOCAL_IP:8201"
 
 # Set debugging level
