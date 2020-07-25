@@ -84,6 +84,11 @@ variable "service_account_storage_bucket_iam_roles" {
   description = "List of IAM roles for the Vault admin service account to have on the storage bucket."
 }
 
+variable consul_version {
+  description = "The version of consul"
+  type = "string"
+}
+
 #
 #
 # KMS

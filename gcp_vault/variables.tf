@@ -378,6 +378,11 @@ variable "vault_instance_tags" {
   description = "Additional tags to apply to the instances. Note 'allow-ssh' and 'allow-vault' will be present on all instances."
 }
 
+variable consul_version {
+  description = "The version of consul"
+  type = "string"
+}
+
 variable "vault_log_level" {
   type    = string
   default = "warn"
