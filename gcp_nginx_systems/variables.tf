@@ -59,10 +59,12 @@ variable "tag" {
   default     = ["public", "public-restricted", "private", "consul"]
 }
 
+#Using regular ubuntu here, and spinning up containers nginxdemos/hello/
 variable "source_image" {
   description = "The source image to build the VM using. Enter in the self link here."
   type        = string
-  default     = "https://www.googleapis.com/compute/v1/projects/nginx-public/global/images/nginx-plus-ubuntu1804-v2019070118"
+  default     = "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20200716"
+  #default     = "https://www.googleapis.com/compute/v1/projects/nginx-public/global/images/nginx-plus-ubuntu1804-v2019070118"
 }
 
 variable "startup_script" {
