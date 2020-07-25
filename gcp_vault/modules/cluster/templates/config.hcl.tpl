@@ -34,7 +34,7 @@ listener "tcp" {
 
 # Create an mTLS listener on the load balancer
 #listener "tcp" {
-#  address            = "${lb_ip}:${vault_port}"
+#  address            = "lb_ip:${vault_port}"
 #  tls_cert_file      = "/etc/vault.d/tls/vault.crt"
 #  tls_key_file       = "/etc/vault.d/tls/vault.key"
 #  tls_client_ca_file = "/etc/vault.d/tls/ca.crt"

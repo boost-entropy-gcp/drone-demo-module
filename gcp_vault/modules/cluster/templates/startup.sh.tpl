@@ -166,7 +166,7 @@ chmod 644 /etc/profile.d/vault.sh
 source /etc/profile.d/vault.sh
 
 #Not using GCP LB
-#if [ ${internal_lb} != true ]; then
+#if [ internal_lb != true ]; then
 #   # Add health-check proxy because target pools don't support HTTPS
 #   apt-get install -yqq nginx
 
