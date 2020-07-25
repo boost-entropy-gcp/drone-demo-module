@@ -70,6 +70,7 @@ module "cluster" {
   kms_keyring                                  = var.kms_keyring
   kms_crypto_key                               = var.kms_crypto_key
   kms_protection_level                         = var.kms_protection_level
+  consul_version                               = var.consul_version
   #load_balancing_scheme                        = var.load_balancing_scheme
   vault_args                                   = var.vault_args
   vault_instance_labels                        = var.vault_instance_labels
