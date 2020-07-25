@@ -28,6 +28,11 @@ provider "google" {
   region  = var.region
 }
 
+terraform {
+  # The configuration for this backend will be filled in by Terragrunt
+  backend "gcs" {}
+}
+
 # This needs to stay here to allow migration from 4.2 to 5.0
 provider "tls" {}
 
