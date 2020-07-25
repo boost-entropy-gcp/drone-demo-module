@@ -59,7 +59,7 @@ resource "google_service_account" "vault-admin" {
 
 module "cluster" {
   source                                       = "./modules/cluster"
-  ip_address                                   = local.ip_address
+  #ip_address                                   = local.ip_address
   subnet                                       = local.subnet
   project_id                                   = var.project_id
   region                                       = var.region
@@ -97,7 +97,7 @@ module "cluster" {
   manage_tls                                   = var.manage_tls
   tls_ca_subject                               = var.tls_ca_subject
   tls_cn                                       = var.tls_cn
-  domain                                       = var.domain
+  #domain                                       = var.domain
   tls_dns_names                                = var.tls_dns_names
   tls_ips                                      = var.tls_ips
   tls_save_ca_to_disk                          = var.tls_save_ca_to_disk
