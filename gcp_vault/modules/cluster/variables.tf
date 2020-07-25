@@ -39,10 +39,10 @@ variable "subnet" {
   description = "The self link of the VPC subnetwork for Vault. By default, one will be created for you."
 }
 
-variable "ip_address" {
-  type        = string
-  description = "The IP address to assign the forwarding rules to."
-}
+// variable "ip_address" {
+//   type        = string
+//   description = "The IP address to assign the forwarding rules to."
+// }
 
 variable "vault_storage_bucket" {
   type        = string
