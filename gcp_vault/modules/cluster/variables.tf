@@ -112,13 +112,13 @@ variable "kms_protection_level" {
 }
 
 
-#TODO: Evaluate https://www.terraform.io/docs/configuration/variables.html#custom-validation-rules when prod ready
-variable "load_balancing_scheme" {
-  type    = string
-  default = "EXTERNAL"
+// #TODO: Evaluate https://www.terraform.io/docs/configuration/variables.html#custom-validation-rules when prod ready
+// variable "load_balancing_scheme" {
+//   type    = string
+//   default = "EXTERNAL"
 
-  description = "Options are INTERNAL or EXTERNAL. If `EXTERNAL`, the forwarding rule will be of type EXTERNAL and a public IP will be created. If `INTERNAL` the type will be INTERNAL and a random RFC 1918 private IP will be assigned"
-}
+//   description = "Options are INTERNAL or EXTERNAL. If `EXTERNAL`, the forwarding rule will be of type EXTERNAL and a public IP will be created. If `INTERNAL` the type will be INTERNAL and a random RFC 1918 private IP will be assigned"
+// }
 
 variable "vault_args" {
   type    = string
