@@ -21,6 +21,8 @@ data "template_file" "vault-startup-script" {
 
   vars = {
     config                  = data.template_file.vault-config.rendered
+    PROJECT_ID              = var.project_id
+    CONSUL_VERSION          = var.consul_version
     custom_http_proxy       = var.http_proxy
     service_account_email   = var.vault_service_account_email
     #internal_lb             = local.use_internal_lb
