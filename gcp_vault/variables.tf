@@ -359,7 +359,9 @@ variable "vault_ca_cert_filename" {
 
 variable "vault_instance_metadata" {
   type    = map(string)
-  default = {}
+  default = {
+    enable-oslogin = "FALSE"
+  }
 
   description = "Additional metadata to add to the Vault instances."
 }
