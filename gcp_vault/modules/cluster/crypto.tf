@@ -15,7 +15,7 @@
  */
 
 # Create the KMS key ring
-resource "google_kms_key_ring" "vault" {
+resource "google_kms_key_ring" "vault2" {
   name     = var.kms_keyring
   location = var.region
   project  = var.project_id
