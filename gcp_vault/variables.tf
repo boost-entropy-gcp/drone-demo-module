@@ -414,6 +414,12 @@ variable "vault_max_num_servers" {
   description = "Maximum number of Vault server nodes to run at one time. The group will not autoscale beyond this number."
 }
 
+variable "f5_vault_addr" {
+  description = "The virtual server address on F5 that will front the vault instances"
+  type        = string
+  default     = ""
+}
+
 variable "consul_port" {
   type    = string
   default = "8300"
