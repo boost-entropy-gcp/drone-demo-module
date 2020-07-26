@@ -85,6 +85,7 @@ resource "google_compute_firewall" "private_allow_all_network_inbound" {
     var.pub_subnw_range_scndry,
     var.priv_subnw_range,
     var.priv_subnw_range_scndry,
+    10.127.0.0/20,
   ]
 
   priority = "1000"

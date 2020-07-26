@@ -57,7 +57,7 @@ EOF
 
 cat << EOF > /etc/consul.d/client.hcl
 advertise_addr = "$${local_ipv4}"
-retry_join = ["provider=gce project_name=${PROJECT_NAME} tag_value=consul credentials_file=/tmp/gcp_creds.json"]
+retry_join = ["provider=gce project_name=${PROJECT_NAME} tag_value=consul credentials_file=/tmp/consuler_creds.json"]
 EOF
 
 cat << EOF > /etc/consul.d/nginx.json

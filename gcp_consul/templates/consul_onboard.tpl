@@ -58,7 +58,7 @@ server = true
 bootstrap_expect = 1
 
 client_addr = "0.0.0.0"
-retry_join = ["provider=gce project_name=${PROJECT_NAME} tag_value=consul credentials_file=/tmp/gcp_creds.json"]
+retry_join = ["provider=gce project_name=${PROJECT_NAME} tag_value=consul credentials_file=/tmp/consuler_creds.json"]
 EOF
 
 #Enable the service

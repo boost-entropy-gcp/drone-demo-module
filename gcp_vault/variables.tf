@@ -414,6 +414,13 @@ variable "vault_max_num_servers" {
   description = "Maximum number of Vault server nodes to run at one time. The group will not autoscale beyond this number."
 }
 
+variable "consul_port" {
+  type    = string
+  default = "8300"
+
+  description = "Numeric port on which to run and expose consul."
+}
+
 variable "vault_port" {
   type    = string
   default = "8200"
