@@ -46,8 +46,8 @@ data "template_file" "vault-config" {
 
   vars = {
     kms_project                              = var.project_id
-    kms_location                             = google_kms_key_ring.vault.location
-    kms_keyring                              = google_kms_key_ring.vault.name
+    kms_location                             = google_kms_key_ring.vault2.location
+    kms_keyring                              = google_kms_key_ring.vault2.name
     kms_crypto_key                           = google_kms_crypto_key.vault-init.name
     #lb_ip                                    = local.lb_ip
     #api_addr                                 = local.api_addr
