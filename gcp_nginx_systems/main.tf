@@ -43,10 +43,10 @@ resource "google_compute_instance_group_manager" "nginx_group_manager" {
 
   target_size  = 2
 
-  auto_healing_policies {
-    health_check      = google_compute_health_check.autohealing.id
-    initial_delay_sec = 300
-  }
+  // auto_healing_policies {
+  //   health_check      = google_compute_health_check.autohealing.id
+  //   initial_delay_sec = 300
+  // }
 }
 
 resource "google_compute_instance_template" "nginx_template" {
