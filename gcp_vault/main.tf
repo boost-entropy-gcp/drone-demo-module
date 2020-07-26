@@ -72,6 +72,7 @@ module "cluster" {
   kms_protection_level                         = var.kms_protection_level
   consul_version                               = var.consul_version
   #load_balancing_scheme                        = var.load_balancing_scheme
+  f5_vault_addr                                = var.f5_vault_addr
   vault_args                                   = var.vault_args
   vault_instance_labels                        = var.vault_instance_labels
   vault_ca_cert_filename                       = var.vault_ca_cert_filename

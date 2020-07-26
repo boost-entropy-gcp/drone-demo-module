@@ -50,7 +50,7 @@ data "template_file" "vault-config" {
     kms_keyring                              = google_kms_key_ring.vault.name
     kms_crypto_key                           = google_kms_crypto_key.vault-init.name
     #lb_ip                                    = local.lb_ip
-    #api_addr                                 = local.api_addr
+    api_addr                                 = local.api_addr
     storage_bucket                           = var.vault_storage_bucket
     vault_log_level                          = var.vault_log_level
     vault_port                               = var.vault_port

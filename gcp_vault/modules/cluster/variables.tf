@@ -340,6 +340,12 @@ variable "tls_cn" {
 //   default     = ""
 // }
 
+variable "f5_vault_addr" {
+  description = "The virtual server address on F5 that will front the vault instances"
+  type        = string
+  default     = ""
+}
+
 variable "tls_dns_names" {
   description = "List of DNS names added to the Vault server self-signed certificate"
   type        = list(string)
