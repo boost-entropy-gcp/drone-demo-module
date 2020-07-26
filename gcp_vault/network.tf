@@ -164,7 +164,7 @@ resource "google_compute_firewall" "allow-internal" {
 
   allow {
     protocol = "tcp"
-    ports    = ["${var.vault_port}-${var.vault_port + 1}", "${var.vault_port}"]
+    ports    = ["${var.vault_port}-${var.vault_port + 1}", "${var.consul_port}-${var.consul_port + 1}"]
   }
   
   allow {
