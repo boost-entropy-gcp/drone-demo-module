@@ -24,7 +24,7 @@ resource "google_kms_key_ring" "vault2" {
 # Create the crypto key for encrypting init keys
 resource "google_kms_crypto_key" "vault-init" {
   name            = var.kms_crypto_key
-  key_ring        = google_kms_key_ring.vault.id
+  key_ring        = google_kms_key_ring.vault2.id
   rotation_period = "604800s"
 
   version_template {
