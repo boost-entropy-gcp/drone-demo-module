@@ -63,7 +63,6 @@ module "cluster" {
   subnet                                       = local.subnet
   project_id                                   = var.project_id
   region                                       = var.region
-  storage_bucket_force_destroy                 = var.storage_bucket_force_destroy
   vault_storage_bucket                         = google_storage_bucket.vault.name
   vault_service_account_email                  = google_service_account.vault-admin.email
   service_account_project_additional_iam_roles = var.service_account_project_additional_iam_roles
