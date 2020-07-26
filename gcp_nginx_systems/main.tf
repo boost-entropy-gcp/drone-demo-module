@@ -16,19 +16,20 @@ terraform {
 # Create NGINX instance in instance group manager
 # -------------------------
 
+#Remove health checks since consul will do it, and also Health check probes come from addresses in the ranges 
+#130.211.0.0/22 and 35.191.0.0/16, so make sure your network firewall rules allow the health check to connect. 
+// resource "google_compute_health_check" "autohealing" {
+//   name                = "${var.name_prefix}-healthcheck1"
+//   check_interval_sec  = 5
+//   timeout_sec         = 5
+//   healthy_threshold   = 2
+//   unhealthy_threshold = 10 # 50 seconds
 
-resource "google_compute_health_check" "autohealing" {
-  name                = "${var.name_prefix}-healthcheck1"
-  check_interval_sec  = 5
-  timeout_sec         = 5
-  healthy_threshold   = 2
-  unhealthy_threshold = 10 # 50 seconds
-
-  http_health_check {
-    request_path = "/"
-    port         = "80"
-  }
-}
+//   http_health_check {
+//     request_path = "/"
+//     port         = "80"
+//   }
+// }
 
 resource "google_compute_instance_group_manager" "nginx_group_manager" {
   name = "${var.name_prefix}-nginx-igm"

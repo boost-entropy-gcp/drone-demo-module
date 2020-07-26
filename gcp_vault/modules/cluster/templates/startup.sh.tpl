@@ -328,19 +328,19 @@ EOF
 
 cat << EOF > /etc/consul.d/client.hcl
 advertise_addr = "$${LOCAL_IP}"
-retry_join = ["provider=gce project_name=${PROJECT_ID} tag_value=consul credentials_file=/tmp/gcp_creds.json"]
+retry_join = ["provider=gce project_name=${PROJECT_ID} tag_value=consul credentials_file=/tmp/consuler_creds.json"]
 EOF
 
 cat << EOF > /etc/consul.d/vault.json
 {
   "service": {
     "name": "vault",
-    "port": 80,
+    "port": 8200,
     "checks": [
       {
         "id": "vault",
         "name": "vault TCP Check",
-        "tcp": "localhost:80",
+        "tcp": "localhost:8200",
         "interval": "10s",
         "timeout": "1s"
       }
