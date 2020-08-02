@@ -118,4 +118,4 @@ export VAULT_SKIP_VERIFY=true
 vault login -method=gcp role="${VAULT_ROLE_DEV}" project="${PROJECT_NAME}" service_account="$svc_acct"
 
 #Get creds
-vault read -field=private_key_data ${VAULT_RULESET_PATH} | base64 -d > /tmp/consuler-creds.json
+vault read -field=private_key_data ${VAULT_RULESET_PATH} | base64 -d > /tmp/consuler_creds.json
