@@ -39,6 +39,11 @@ resource "google_compute_instance" "ubuntu" {
     enable-oslogin = "FALSE"
   }
 
+  #Use default GCE service account
+  service_account {
+    scopes = ["cloud-platform"]
+  }
+
   network_interface {
     subnetwork = var.subnetwork
 

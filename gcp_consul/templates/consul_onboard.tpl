@@ -65,3 +65,19 @@ EOF
 sudo systemctl enable consul
 sudo service consul start
 sudo service consul status
+
+#Install Vault
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install vault
+
+#Log in to Vault
+vault_address=${VAULT_ADDR}
+svc_acct=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email" -H "Metadata-Flavor: Google")
+
+export VAULT_ADDR=$vault_address
+
+vault login -method=gcp role="${VAULT_ROLE_DEV}" project="${PROJECT_NAME}" service_account="$svc_acct"
+
+#Get creds
+vault read -field=private_key_data ${VAULT_RULESET_PATH} | base64 -d > /tmp/consuler-creds.json

@@ -34,6 +34,11 @@ resource "google_compute_instance" "consul" {
   metadata = {
     enable-oslogin = "FALSE"
   }
+  
+  #Use default GCE service account
+  service_account {
+    scopes = ["cloud-platform"]
+  }
 
   network_interface {
     subnetwork = var.subnetwork
@@ -45,7 +50,10 @@ resource "google_compute_instance" "consul" {
   }
 
   metadata_startup_script = templatefile("${path.module}/templates/consul_onboard.tpl", {
-    CONSUL_VERSION  = var.consul_version
-    PROJECT_NAME    = var.project
+    CONSUL_VERSION     = var.consul_version
+    PROJECT_NAME       = var.project
+    VAULT_ADDR         = var.vault_addr
+    VAULT_ROLE_DEV     = var.vault_role_dev
+    VAULT_RULESET_PATH = var.vault_ruleset_path
   })
 }

@@ -48,6 +48,21 @@ variable consul_version {
   type = "string"
 }
 
+variable vault_addr {
+  description = "The vault address"
+  type = "string"
+}
+
+variable vault_role_dev {
+  description = "The vault role used to login (dev)"
+  type = "string"
+}
+
+variable vault_ruleset_path {
+  description = "The vault gcp ruleset used when getting creds"
+  type = "string"
+}
+
 # -------------------------
 # OPTIONAL PARAMETERS
 # Generally, these values won't need to be changed.
