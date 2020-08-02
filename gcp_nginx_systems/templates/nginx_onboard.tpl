@@ -113,6 +113,7 @@ vault_address=${VAULT_ADDR}
 svc_acct=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email" -H "Metadata-Flavor: Google")
 
 export VAULT_ADDR=$vault_address
+export VAULT_SKIP_VERIFY=true
 
 vault login -method=gcp role="${VAULT_ROLE_DEV}" project="${PROJECT_NAME}" service_account="$svc_acct"
 
