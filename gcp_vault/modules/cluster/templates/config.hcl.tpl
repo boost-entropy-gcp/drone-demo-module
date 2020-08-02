@@ -33,10 +33,10 @@ listener "tcp" {
 }
 
 # Create a non-local non-TLS listener
-listener "tcp" {
-  address     = "LOCAL_IP:${vault_port}"
-  tls_disable = 1
-}
+#listener "tcp" {
+#  address     = "LOCAL_IP:${vault_port}"
+#  tls_disable = 1
+#}
 
 # Create an mTLS listener on the load balancer
 #listener "tcp" {
