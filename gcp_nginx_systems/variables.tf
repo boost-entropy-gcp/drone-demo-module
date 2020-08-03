@@ -63,6 +63,12 @@ variable vault_ruleset_path {
   type = "string"
 }
 
+variable target_size {
+  description = "Minimum instance count for nginx instance group"
+  type        = number
+  default     = 2
+}
+
 # -------------------------
 # OPTIONAL PARAMETERS
 # Generally, these values won't need to be changed.

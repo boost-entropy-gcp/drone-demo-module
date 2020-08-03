@@ -41,7 +41,7 @@ resource "google_compute_instance_group_manager" "nginx_group_manager" {
     instance_template  = google_compute_instance_template.nginx_template.self_link
   }
 
-  target_size  = 2
+  target_size  = var.target_size
 
   // auto_healing_policies {
   //   health_check      = google_compute_health_check.autohealing.id
